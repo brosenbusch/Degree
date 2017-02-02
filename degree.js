@@ -11,18 +11,19 @@ let A = Matrix([
 function degree(mtrx,v){
   let sum = 0;
   let degreelist = mtrx(v-1);
-  for (let a=0; a<degreelist.length; a++){
-    sum += degreelist[a];
+  for(var a=0;a<degreelist.length;a++){
+    sum += (degreelist[a]);
   }
   return sum;
 }
 
-function degreecentrality(){
-
+function degreecentrality(mtrx,v){
+  let neighbor = mtrx.size()[0]-1;
+  return degree(mtrx,v)/neighbor;
 }
 
 //Challenge
 
 //Run test code with ctrl+shift+p  then type in "script"
 console.log(degree(A,3));
-console.log(degreecentrality(A,2));
+console.log(degreecentrality(A,3));
